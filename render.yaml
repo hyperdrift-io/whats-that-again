@@ -2,9 +2,7 @@ services:
   - type: web
     name: whatsthat-app
     env: python  # Backend runtime is Python
-    buildCommand: |
-      pip install -r api/requirements.txt && \
-      cd frontend && bun install && bun run build
+    buildCommand: pip install -r api/requirements.txt && cd frontend && bun install && bun run build && ls -la
     startCommand: cd api && uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: ANTHROPIC_API_KEY
