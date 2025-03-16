@@ -2,7 +2,7 @@ services:
   - type: web
     name: whatsthat-app
     env: python
-    buildCommand: ./build.sh  # Call the script from the root
+    # buildCommand: ./build.sh  # Call the script from the root
     startCommand: cd api && uvicorn main:app --host 0.0.0.0
     envVars:
       - key: ANTHROPIC_API_KEY
