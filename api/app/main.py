@@ -4,6 +4,7 @@ Helps you remember things that are on the tip of your tongue by directly queryin
 """
 
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 
 # Import routers directly
@@ -15,6 +16,9 @@ app = FastAPI(
     title="WhatsThatAgain API",
     description="API for the WhatsThatAgain application"
 )
+
+# Mount the frontend static files from the build output
+app.mount("/", StaticFiles(directory="../frontend/dist", html=True), name="static")
 
 # Add CORS middleware
 app.add_middleware(
