@@ -1,15 +1,15 @@
 services:
   - type: web
     name: whatsthat-app
-    env: python  # Backend runtime is Python
-    buildCommand: pip install -r api/requirements.txt && cd frontend && bun install && bun run build && ls -la
-    startCommand: cd api && uvicorn main:app --host 0.0.0.0 --port $PORT
+    env: python
+    buildCommand: ./build.sh  # Call the script from the root
+    startCommand: cd api && uvicorn main:app --host 0.0.0.0
     envVars:
       - key: ANTHROPIC_API_KEY
         sync: false
       - key: PYTHON_VERSION
         value: 3.9.0
       - key: BUN_VERSION
-        value: 1.1.0  # For frontend build
-    healthCheckPath: /  # Adjust if needed
+        value: 1.1.0
+    healthCheckPath: /
     autoDeploy: true
