@@ -2,8 +2,8 @@ services:
   - type: web
     name: whatsthat-app
     env: python
-    # buildCommand: ./build.sh  # Call the script from the root
-    startCommand: cd api && uvicorn main:app --host 0.0.0.0
+    buildCommand: /bin/bash ./build.sh
+    startCommand: cd api && uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: ANTHROPIC_API_KEY
         sync: false
