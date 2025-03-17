@@ -174,7 +174,13 @@
     <div class="result-container">
       <h3>That thing you're thinking of is:</h3>
       <div class="answer" class:hint-required={result.confidence < CONFIDENCE_THRESHOLD}>
-        {@html result.answer}
+        {#if result.answer}
+          <a href="https://search.brave.com/search?q={encodeURIComponent(result.answer)}" target="_blank" rel="noopener noreferrer">
+            {@html result.answer}
+          </a>
+        {:else}
+          {@html result.answer}
+        {/if}
       </div>
 
       {#if result.usage_info}
@@ -369,28 +375,18 @@
     word-break: break-word;
   }
 
-  .answer.hint-required {
-    color: var(--hint-required);
-  }
-
-  :global(.answer-link) {
-    color: var(--primary);
+  .answer a {
+    color: inherit;
     text-decoration: none;
-    transition: all 0.2s ease;
-    display: inline-block;
-    position: relative;
+    display: block;
   }
 
-  :global(.answer-link:hover) {
-    color: var(--primary-dark);
+  .answer a:hover {
     text-decoration: underline;
   }
 
-  :global(.answer-link::after) {
-    content: "↗";
-    font-size: 0.8em;
-    margin-left: 0.3em;
-    vertical-align: super;
+  .answer.hint-required {
+    color: var(--hint-required);
   }
 
   .usage-info {
@@ -517,5 +513,45 @@
     font-style: italic;
     color: #856404;
     margin-top: 0.5rem;
+  }
+
+  .brave-link {
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .brave-link a {
+    display: inline-block;
+    background-color: #FB542B;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s;
+  }
+
+  .brave-link a:hover {
+    background-color: #e23e17;
+  }
+
+  :global(.answer-link) {
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+    position: relative;
+  }
+
+  :global(.answer-link:hover) {
+    color: var(--primary-dark);
+    text-decoration: underline;
+  }
+
+  :global(.answer-link::after) {
+    content: "↗";
+    font-size: 0.8em;
+    margin-left: 0.3em;
+    vertical-align: super;
   }
 </style>

@@ -9,7 +9,7 @@ services:
         sync: false
       - key: PYTHON_VERSION
         value: 3.9.0
-      - key: BUN_VERSION
-        value: 1.1.0
+      - key: NPM_VERSION
+        value: 10.2.4
     healthCheckPath: /
-    autoDeploy: false
+    autoDeploy: true
