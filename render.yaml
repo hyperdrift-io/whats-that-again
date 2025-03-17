@@ -1,8 +1,10 @@
 services:
   - type: web
-    name: whatsthat-app
+    name: whats-that-again  # Must match your existing service name
     env: python
-    startCommand: cd api && uvicorn main:app --host 0.0.0.0 --port $PORT
+    preDeployCommand: /bin/bash ./frontend_build.sh  # Build frontend first
+    buildCommand: pip install -r api/requirements.txt  # Backend prep only
+    startCommand: cd api && uvicorn main:app --host 0.0.0.0 --port $PORT  # Keep this
     envVars:
       - key: ANTHROPIC_API_KEY
         sync: false
@@ -11,4 +13,4 @@ services:
       - key: BUN_VERSION
         value: 1.1.0
     healthCheckPath: /
-    autoDeploy: true
+    autoDeploy: false
