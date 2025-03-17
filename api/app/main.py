@@ -17,9 +17,6 @@ app = FastAPI(
     description="API for the WhatsThatAgain application"
 )
 
-# Mount the frontend static files from the build output
-app.mount("/", StaticFiles(directory="../frontend/dist", html=True), name="static")
-
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
@@ -29,9 +26,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Include routers
+# Include routers BEFORE mounting static files
 app.include_router(search_router, tags=["search"])
 app.include_router(static_router, tags=["static"])
+
+# Mount the frontend static files from the build output AFTER including routers
+app.mount("/", StaticFiles(directory="../frontend/dist", html=True), name="static")
 
 # Root endpoint
 @app.get("/", tags=["root"])
