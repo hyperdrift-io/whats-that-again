@@ -12,4 +12,4 @@ bun install
 bun run build
 
 echo "Build complete. Listing frontend directory contents..."
-ls -la
+exit 0
