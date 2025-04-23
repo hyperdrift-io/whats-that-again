@@ -1,116 +1,78 @@
 # WhatsThatAgain
 
-A minimal application that helps you remember things that are on the tip of your tongue by directly querying AI.
+> 🧠 **“For the things you *meant* to remember — and totally didn’t.”**
 
-## Features
+---
 
-- Simple, clean interface
-- Conversation history to refine your search
-- Memory tags for better recall
-- Automatic model progression for difficult questions
-- Daily query limits to control costs
+## 🪄 Never Forget That Link, Idea, or Genius Thought Again
 
-## Tech Stack
+WhatsThatAgain is your **digital memory assistant** — a smart, searchable space that helps you **remember the things you forgot you even forgot**.
 
-- **Backend**: FastAPI (Python)
-- **Frontend**: Svelte + TypeScript
-- **Build Tool**: Bun (JavaScript runtime & package manager)
-- **AI**: Anthropic's Claude API
+You know that moment when you:
 
-## Getting Started
+- Remember seeing something *really useful* online, but can't find it again?
+- Had a brilliant idea in the shower that evaporated by the time your socks were on?
+- Saved 37 tabs for “later” and now don’t even know *why* they’re open?
 
-### Prerequisites
+Yeah. This is the app for that.
 
-- Python 3.12+
-- Bun (JavaScript runtime & package manager)
-- Anthropic API key
+---
 
-### Installation
+## ⚡️ What It Does
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/yourusername/whatsthat.git
-   cd whatsthat-fastapi-svelte
-   ```
+- 📌 Remembers links, ideas, and notes you add or save from anywhere  
+- 🔍 Helps you find them later — even when you don’t remember the right words  
+- 🤖 (Optional) Uses AI to connect vague memories to actual results  
+- 🗃️ Acts like your “searchable past self” with context
 
-2. Set up the backend:
-   ```
-   cd api
-   pip install -r requirements.txt
-   ```
+---
 
-3. Create a `.env` file in the `api` directory with your Anthropic API key:
-   ```
-   ANTHROPIC_API_KEY=your-key-here
-   ```
+## 🧑‍💻 Use Cases (aka, “I wish I had this last week”)
 
-4. Set up the frontend:
-   ```
-   cd ../frontend
-   bun install
-   ```
+- “What was that tool someone mentioned on Discord at 2am…?”
+- “Where did I read that quote about bees and jazz?”
+- “I KNOW I saved that article about productivity myths. Somewhere.”
+- “I had an idea for my side project while half-asleep. It was genius. It's gone.”
+- “Why do I have 13 open tabs titled ‘Getting Started’?”
 
-### Running the Application
+---
 
-1. Start the backend server:
-   ```
-   cd api
-   uvicorn main:app --reload
-   ```
+## 🧬 Why You'll Actually Use It
 
-2. In a separate terminal, start the frontend development server:
-   ```
-   cd frontend
-   bun run dev
-   ```
+Unlike to-do lists you abandon or notes you never look at, **WhatsThatAgain is built for recall, not just capture**. It’s designed to be:
 
-3. Open your browser and navigate to `http://localhost:5173`
+- Fast to use 🏃
+- Easy to search 🕵️
+- Funny enough to remember 🤪
 
-### Building for Production
+---
 
-1. Build the frontend:
-   ```
-   cd frontend
-   bun run build
-   ```
+## 🧠 Motto (Say It With Me)
 
-2. The built files will be in the `frontend/dist` directory, which the FastAPI server will serve automatically.
+> **“If your brain had a Ctrl+Z — this would be it.”**
 
-3. Run the production server:
-   ```
-   cd api
-   uvicorn main:app
-   ```
+Stick that in your mental RAM.
 
-## Deployment
+---
 
-### Deploying to Render.com
+## 🛠️ Roadmap Highlights
 
-This project includes a `render.yaml` configuration file for easy deployment to Render.com:
+- Browser extension for one-click saves
+- AI-powered fuzzy memory search ("That thing with the yellow logo and crypto vibes?")
+- Chat interface: ask your past self what the hell you were thinking
+- Mobile quick-capture mode
+- Memory score (yes, we rate your forgetfulness)
 
-1. Create a Render.com account if you don't have one
-2. Fork or push this repository to GitHub
-3. In Render Dashboard, click "New" and select "Blueprint"
-4. Connect your GitHub repository
-5. Render will automatically detect the `render.yaml` file and set up the services
-6. Add your `ANTHROPIC_API_KEY` as an environment variable for the backend service
-7. Deploy!
+---
 
-Alternatively, you can deploy the services separately:
+## 🚀 Get Involved
 
-#### Backend API (FastAPI)
-- Create a "Web Service"
-- Connect your GitHub repository
-- Set build command: `pip install -r api/requirements.txt`
-- Set start command: `cd api && uvicorn main:app --host 0.0.0.0 --port $PORT`
-- Add environment variable: `ANTHROPIC_API_KEY=your-key-here`
+This is open source, fun, and dead serious about being useful.  
+If you’ve ever sighed *“what was that again?”*, you’re already one of us.
 
-#### Frontend (Svelte + Bun)
-- Create a "Static Site"
-- Connect your GitHub repository
-- Set build command: `cd frontend && curl -fsSL https://bun.sh/install | bash && ~/.bun/bin/bun install && ~/.bun/bin/bun run build`
-- Set publish directory: `frontend/dist`
+Pull requests, bug reports, and memory joggers welcome.
 
-## License
+---
 
-MIT 
+**🔗 [hyperdrift-io/whats-that-again](https://github.com/hyperdrift-io/whats-that-again)**  
+✨ Built to remember the things that make you *you*.
